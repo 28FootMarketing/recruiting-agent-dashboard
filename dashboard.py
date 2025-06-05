@@ -6,14 +6,14 @@ st.title("All-Star AI Support Team")
 st.markdown("Switch between your specialized recruiting agents below.")
 
 agent_options = {
-    "🏀 Jordan – The Closer": "https://agent-jordan.streamlit.app",
-    "🎯 Kobe – The Mamba Mentor": "https://agent-kobe.streamlit.app",
-    "🔥 Maya – The Motivator": "https://agent-maya.streamlit.app",
-    "🔍 Magic – The Opportunity Connector": "https://agent-magic.streamlit.app",
-    "📣 Lisa – Parent Communication & Retention": "https://agent-lisa.streamlit.app",
-    "📞 Candace – Direct Contact Support": "https://agent-candace.streamlit.app",
-    "🧠 Kareem – Mindset & Growth Strategist": "https://agent-kareem.streamlit.app",
-    "🌅 Dawn – The Emotional Reset Bot": "https://agent-dawn.streamlit.app"
+    "🏀 Jordan – The Closer": "https://agentjordan.streamlit.app",
+    "🎯 Kobe – The Mamba Mentor": "https://agentkobe.streamlit.app",
+    "🔥 Maya – The Motivator": "https://agentmaya.streamlit.app",
+    "🔍 Magic – The Opportunity Connector": "https://agentmagic.streamlit.app",
+    "📣 Lisa – Parent Communication & Retention": "https://agentlisa.streamlit.app",
+    "📞 Candace – Direct Contact Support": "https://agentcandace.streamlit.app",
+    "🧠 Kareem – Mindset & Growth Strategist": "https://agentkareem.streamlit.app",
+    "🌅 Dawn – The Emotional Reset Bot": "https://agentdawn.streamlit.app"
 }
 
 selected_agent = st.selectbox("Select an Agent", list(agent_options.keys()))
