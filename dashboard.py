@@ -1,29 +1,23 @@
-
 import streamlit as st
-import importlib
 
-st.set_page_config(page_title="Recruiting AI Agent Dashboard", page_icon="🤖", layout="centered")
-st.title("🏆 Athletic Recruiting Agent Hub")
-st.subheader("Switch between your all-star AI support team")
+st.set_page_config(page_title="Recruiting Agent Dashboard", layout="wide")
 
-agents = {
-    "Jordan – Onboarding Specialist": "jordan",
-    "Kobe – Recruiting Education Coach": "kobe",
-    "Maya – Nurture & Motivation": "maya",
-    "Magic – Opportunity Connector": "magic",
-    "Lisa – Parent Communication & Retention": "lisa",
-    "Candace – Case Manager & Progress Tracker": "candace",
-    "Kareem – Wisdom & Mindset Coach": "kareem",
-    "Dawn – Emotional Wellness & Clarity Coach": "dawn"
+st.title("All-Star AI Support Team")
+st.markdown("Switch between your specialized recruiting agents below.")
+
+agent_options = {
+    "🏀 Jordan – The Closer": "https://agent-jordan.streamlit.app",
+    "🎯 Kobe – The Mamba Mentor": "https://agent-kobe.streamlit.app",
+    "🔥 Maya – The Motivator": "https://agent-maya.streamlit.app",
+    "🔍 Magic – The Opportunity Connector": "https://agent-magic.streamlit.app",
+    "📣 Lisa – Parent Communication & Retention": "https://agent-lisa.streamlit.app",
+    "📞 Candace – Direct Contact Support": "https://agent-candace.streamlit.app",
+    "🧠 Kareem – Mindset & Growth Strategist": "https://agent-kareem.streamlit.app",
+    "🌅 Dawn – The Emotional Reset Bot": "https://agent-dawn.streamlit.app"
 }
 
-choice = st.selectbox("🤖 Select an Agent", list(agents.keys()))
-st.markdown("---")
-selected_module = agents[choice]
+selected_agent = st.selectbox("Select an Agent", list(agent_options.keys()))
 
-st.info(f"You have selected **{choice}**. Please wait while we load their interface.")
-try:
-    module = importlib.import_module(selected_module)
-    module.run()
-except:
-    st.warning(f"🔧 {choice.split('–')[0]} is not available yet. Please ensure `{selected_module}.py` is in the directory.")
+if selected_agent:
+    st.markdown(f"### Launching: {selected_agent}")
+    st.markdown(f"[Click here to open]({agent_options[selected_agent]})", unsafe_allow_html=True)
