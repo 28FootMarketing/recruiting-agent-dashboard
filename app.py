@@ -68,3 +68,35 @@ elif agent_option == "🛡️ Bill – System Manager":
 # Optional: Add a footer or logo
 st.markdown("---")
 st.caption("Facilitate The Process | Powered by 28 Foot Marketing")
+import streamlit as st
+from streamlit.components.v1 import html
+
+st.set_page_config(layout="wide", page_title="AI Recruiting Dashboard")
+
+st.sidebar.title("🎮 Select AI Agent")
+agent = st.sidebar.radio("Choose your assistant:", ["Jordan", "Kobe", "Candace", "Magic", "Lisa", "Bill"])
+
+st.title("🏀 AI Recruiting Staff: 3D Interactive Dashboard")
+
+# Injecting a free 3D animation (placeholder iframe)
+html("""
+<div style='text-align:center'>
+  <iframe src='https://my.spline.design/rotatingcube-3dmodel' width='500' height='400' frameborder='0'></iframe>
+</div>
+""", height=420)
+
+st.subheader(f"Agent: {agent}")
+st.write("**Quote:**", {
+    "Jordan": "Breaks the ice and gets players set up fast.",
+    "Kobe": "Delivers sharp, consistent training lessons.",
+    "Candace": "Handles text, email, and coach check-ins like a pro.",
+    "Magic": "Introduces athletes to exposure opportunities.",
+    "Lisa": "Keeps parents updated, engaged, and supported.",
+    "Bill": "Monitors the entire system and calls out issues."
+}[agent])
+
+# Fake real-time feedback
+st.success(f"{agent} completed 3 tasks this hour.")
+
+if agent == "Bill":
+    st.warning("🚨 Alert: Magic has not sent this week's opportunity email.")
